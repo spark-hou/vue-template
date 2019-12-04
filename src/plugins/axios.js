@@ -36,31 +36,24 @@ axios.interceptors.response.use(function (response) {
  * @param param  参数
  */
 function http(url, param) {
-    if (url.type == "get") {
-        let pro = new Promise((resolve, reject) => {
-            axios.get(url.path, {params: {...param}})
-                .then((result) => {
-                    resolve(result);
-                })
-                .catch(reason => {
-                    reject(reason)
-                })
+    let pro = new Promise((resolve, reject) => {
+        axios({
+            method: url.type,
+            url: url.path,
+            data: {
+                ...param
+            }
         })
+            .then((result) => {
+                resolve(result);
+            })
+            .catch(reason => {
+                reject(reason)
+            });
 
-        return pro
-    }
-    if (url.type == "post") {
-        let pro = new Promise((resolve, reject) => {
-            axios.post(url.path, {...param})
-                .then((result) => {
-                    resolve(result);
-                })
-                .catch(reason => {
-                    reject(reason)
-                })
-        })
-        return pro
-    }
+    })
+
+    return pro
 
 }
 
