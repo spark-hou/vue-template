@@ -37,7 +37,7 @@ axios.interceptors.response.use(function (response) {
  */
 function http(url, param) {
     let pro = new Promise((resolve, reject) => {
-        const data = url.type === 'get' ? 'data' : 'params'
+        const data = url.type === 'get' ? 'params' : 'data'
         axios({
             method: url.type,
             url: url.path,
