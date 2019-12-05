@@ -1,6 +1,6 @@
 
 
-# vue-part-time-job-website
+# vue-tamplate
 
 ## Project setup
 ```
