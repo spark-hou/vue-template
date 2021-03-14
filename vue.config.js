@@ -8,7 +8,6 @@ module.exports = {
   publicPath: './',
   devServer: {
     port: 8888, // 端口
-
     proxy: {
       '/cgi': {
         target: 'http://192.168.3.242:30421', // 对应自己的接口
