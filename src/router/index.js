@@ -1,29 +1,29 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Home from '../views/Home.vue';
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
-    {
-        path: '/',
-        name: 'home',
-        component: Home
-    },
-    {
-        path: '/about',
-        name: 'about',
-        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-    }
-]
+  {
+    path: '/',
+    name: 'home',
+    component: Home,
+  },
+  {
+    path: '/about',
+    name: 'about',
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+  },
+];
 
 const router = new VueRouter({
-    routes
-})
-//路由守卫
+  routes,
+});
+// 路由守卫
 router.beforeEach((to, from, next) => {
-    console.log("-------beforeEach----------");
-    next();
-})
+  console.log('-------beforeEach----------');
+  next();
+});
 
-export default router
+export default router;

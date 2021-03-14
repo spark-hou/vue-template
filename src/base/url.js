@@ -8,4 +8,6 @@
 /**
  *   test:{path:"/test", type:"get"}
  */
-const url = {}
+const url = {};
+
+export default url;
